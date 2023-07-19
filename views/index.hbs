@@ -1,0 +1,17 @@
+<h1>{{title}}</h1>
+{{#if nombreUsuario}}
+  <p>Hola {{nombre}} tu rol es el de {{rol}} <a href="/salir">Salir</a></p>
+{{/if}}
+
+{{#unless nombreUsuario}}
+  <p>No te conozco</p>
+  <form action="/ingresar" method="post">
+    <input type="text" name="nombre" placeholder="Escribe tu nombre" />
+    <select name="rol" id="rol">
+        <option value="">Seleccionar rol</option>
+        <option value="Propietario">Propietario</option>
+        <option value="Vendedor">Vendedor</option>
+    </select>
+    <button type="submit">Ingresar</button>
+  </form>
+{{/unless}}
